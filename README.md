@@ -42,6 +42,8 @@ If anything is unclear, feel free to open a feature request for better documenta
 
 ## How to Contribute 🛠️
 
+You can download the TOX on the releases page.
+
 This is your space to **report bugs** and **request features**. Here’s how you can help:
 
 1. **Submit Bug Reports**: Found an issue? Open a GitHub Issue and describe the problem in detail. I'll work on fixes in upcoming releases.

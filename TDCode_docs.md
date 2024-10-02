@@ -9,7 +9,7 @@ TDCode is a high-performance, integrated code editor component for TouchDesigner
 - **Project-Wide Autocompletion:** Intelligent suggestions based on your entire TD network.
 - **Rapid DAT/OP Access:** Quickly navigate and edit any DAT or OP in your project.
 - **Real-Time Sync:** Changes reflect immediately in TouchDesigner for instant feedback.
-- **Advanced Editor Features:** Powered by Monaco Editor, configurable to your liking at 'editor_config_js'.
+- **Advanced Editor Features:** Powered by Monaco Editor, configurable to your liking at 'editor/editor_config_js'.
 - **Custom UI and Shortcuts:** Tailored interface and keyboard shortcuts for TD workflows.
 - **AI-Powered Code Completion:** Integrated Monacopilot for intelligent code suggestions.
 
@@ -37,6 +37,7 @@ TDCode is a high-performance, integrated code editor component for TouchDesigner
   - Custom operators and parameters from your project
   - Python standard library
   - AI-powered suggestions from Monacopilot
+  - Use 'Ctrl+Shift+Space' to trigger ai completions in onDemand mode, type or use the key command to trigger completions in onIdle & onTyping
 
 ## Utilizing Syntax Highlighting
 TDCode automatically detects and applies appropriate syntax highlighting. Supported languages include:

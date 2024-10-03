@@ -58,6 +58,7 @@ I'll be regularly updating this repo with:
 
 - **Changelogs**: Listing the improvements, bug fixes, and new features in each release.
 - **Announcements**: Keeping you informed about major changes and upcoming features.
+- **Discussions**: There is a Discussions tab which we can use to get to know each other as a community, as well as discuss features or approaches that dont neatly fit into a feature request. Feel free to introduce yourself over there
 
 ---
 

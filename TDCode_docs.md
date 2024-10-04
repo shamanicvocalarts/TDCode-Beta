@@ -47,6 +47,8 @@ TDCode automatically detects and applies appropriate syntax highlighting. Suppor
 - HTML/CSS
 - JavaScript / TypeScript
 
+
+
 ## Keyboard Shortcuts
 - 'Ctrl+F': Find
 - 'Ctrl+H': Replace
@@ -71,10 +73,53 @@ TDCode now integrates Monacopilot, providing intelligent code suggestions:
 
 for more information on monacopilot. visit https://github.com/arshad-yaseen/monacopilot
 
-### Performance Optimizations
-- Lazy loading of large scripts
-- Efficient diff-based updates to TouchDesigner
-- Asynchronous syntax parsing and highlighting
+
+## Terminal Commands 
+
+ `chat` Command
+
+The `chat` command allows users to interact with a chat model by sending messages to it. This command also provides options to utilize chat history and select specific models for the conversation. the chat command works with [https://openrouter.ai] api. 
+
+#### Usage
+````bash
+
+chat [-h|--history] <model> : <message>
+````
+
+#### Parameters
+- `-h`, `--history`:  
+  Optional flag that, when provided, uses the chat history during the conversation. This helps maintain the context of previous interactions with the model.
+
+- `<model>`:  
+  Specifies the model to use for the chat interaction. If not provided, the default model is set to `deepseek/deepseek-chat`.
+
+- `<message>`:  
+  The message to be sent to the chat model. This is the main text input that the model will process and respond to.
+
+#### Examples
+
+1. **Basic Chat Interaction with Default Model**:
+````bash
+
+chat deepseek/deepseek-chat : Hello, how are you?
+````
+
+
+
+2. **Chat Interaction Using Chat History**:
+````bash
+
+chat -h deepseek/deepseek-chat : Continue our discussion on quantum computing.`
+``````
+
+
+3. **Chat Interaction with a Specified Model**:
+````bash
+
+chat openai/gpt-4 : What is the capital of France?
+`````
+
+
 
 ## Extending TDCode
 Developers can extend TDCode's capabilities:

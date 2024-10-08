@@ -12,11 +12,12 @@ TDCode is a high-performance, integrated code editor component for TouchDesigner
 - **Advanced Editor Features:** Powered by Monaco Editor, configurable to your liking at 'editor/editor_config_js'.
 - **Custom UI and Shortcuts:** Tailored interface and keyboard shortcuts for TD workflows.
 - **AI-Powered Code Completion:** Integrated Monacopilot for intelligent code suggestions.
+- **Terminal Chat Command:** Interactive chat via `chat` command with model selection and chat history options.
 
 ## Installation
 1. Drag and drop TDCode into your project.
 2. TDCode will automatically initialize and integrate with your project.
-3. Press TDCode button in main panel, or press 'Ctrl+T' to open TDCodes editor panel
+3. Press the TDCode button in the main panel, or press 'Ctrl+T' to open TDCode's editor panel.
 4. No additional setup or configuration is required.
 
 ## Navigating DATs and OPs
@@ -37,7 +38,7 @@ TDCode is a high-performance, integrated code editor component for TouchDesigner
   - Custom operators and parameters from your project
   - Python standard library
   - AI-powered suggestions from Monacopilot
-  - Use 'Ctrl+Shift+Space' to trigger ai completions in onDemand mode, type or use the key command to trigger completions in onIdle & onTyping
+  - Use 'Ctrl+Shift+Space' to trigger AI completions in onDemand mode, or type to trigger completions in onIdle & onTyping modes.
 
 ## Utilizing Syntax Highlighting
 TDCode automatically detects and applies appropriate syntax highlighting. Supported languages include:
@@ -46,8 +47,6 @@ TDCode automatically detects and applies appropriate syntax highlighting. Suppor
 - JSON
 - HTML/CSS
 - JavaScript / TypeScript
-
-
 
 ## Keyboard Shortcuts
 - 'Ctrl+F': Find
@@ -59,37 +58,37 @@ TDCode automatically detects and applies appropriate syntax highlighting. Suppor
 
 ### Monarch Language Models
 TDCode implements a Monarch language & syntax highlighter to provide TD-specific language features:
-- Hover information for TD operators and parameters
-- Go-to-definition for custom components and modules
-- Real-time error checking and linting
+- Hover information for TD operators and parameters.
+- Go-to-definition for custom components and modules.
+- Real-time error checking and linting.
 
 For more information on Monarch, visit: https://microsoft.github.io/monaco-editor/monarch.html
 
 ### AI-Powered Code Completion
 TDCode now integrates Monacopilot, providing intelligent code suggestions:
-- Context-aware completions based on your current code and project structure
-- Support for TouchDesigner-specific code patterns and best practices
-- Real-time suggestions as you type
+- Context-aware completions based on your current code and project structure.
+- Support for TouchDesigner-specific code patterns and best practices.
+- Real-time suggestions as you type.
 
-for more information on monacopilot. visit https://github.com/arshad-yaseen/monacopilot
+For more information on Monacopilot, visit https://github.com/arshad-yaseen/monacopilot
 
+## Terminal Commands
 
-## Terminal Commands 
-
- `chat` Command
-
-The `chat` command allows users to interact with a chat model by sending messages to it. This command also provides options to utilize chat history and select specific models for the conversation. the chat command works with [https://openrouter.ai] api. 
+### `chat` Command
+The `chat` command allows users to interact with a chat model by sending messages to it. This command also provides options to utilize chat history and select specific models for the conversation. The `chat` command works with the [https://openrouter.ai](https://openrouter.ai) API.
 
 #### Usage
-````bash
-
+```bash
 chat [-h|--history] <model> : <message>
-````
+```
 
 #### Parameters
 - `-h`, `--history`:  
   Optional flag that, when provided, uses the chat history during the conversation. This helps maintain the context of previous interactions with the model.
-
+  
+- `-p [paths]`:  
+  Allows you to send specific DAT or OP context paths for more informed responses from the chat model.
+  
 - `<model>`:  
   Specifies the model to use for the chat interaction. If not provided, the default model is set to `deepseek/deepseek-chat`.
 
@@ -97,31 +96,26 @@ chat [-h|--history] <model> : <message>
   The message to be sent to the chat model. This is the main text input that the model will process and respond to.
 
 #### Examples
-
 1. **Basic Chat Interaction with Default Model**:
-````bash
-
+```bash
 chat deepseek/deepseek-chat : Hello, how are you?
-````
-
-
+```
 
 2. **Chat Interaction Using Chat History**:
-````bash
+```bash
+chat -h deepseek/deepseek-chat : Continue our discussion on quantum computing.
+```
 
-chat -h deepseek/deepseek-chat : Continue our discussion on quantum computing.`
-``````
+3. **Chat Interaction with Specified Model and Context**:
+```bash
+chat -h -p [path/to/context.dat, path/to/context.op] deepseek/deepseek-chat : Analyze this data.
+```
 
-
-3. **Chat Interaction with a Specified Model**:
-````bash
-
-chat openai/gpt-4 : What is the capital of France?
-`````
-
-
+4. **Reuse Previous Context**:
+```bash
+chat * deepseek/deepseek-chat : How does this data compare to our last chat?
+```
 
 ## Extending TDCode
 Developers can extend TDCode's capabilities:
-- Remove 'TDCode/*' from the DAT Settings 'excludepath' parameter to access and modify core functionality
-
+- Remove 'TDCode/*' from the DAT Settings 'excludepath' parameter to access and modify core functionality.
